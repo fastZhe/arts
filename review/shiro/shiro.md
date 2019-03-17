@@ -1,3 +1,9 @@
+---
+title: shiro
+date: 2018-12-26 09:39:02
+tags: shiro
+categories: ["java","shiro"]
+---
 
 ### 简介
 Apache shiro是一个开源的安全框架，主要用于清晰的处理包括验证（authentication）、授权（authorization）,企业session管理以及加密（cryptography）
@@ -14,7 +20,6 @@ Apache shiro是一个开源的安全框架，主要用于清晰的处理包括�
 * 可以整合一个或者多个数据源的用户数据，对外提供一个复合用户
 * 可以实现单点登录功能 SSO
 * 可以实现 remember me功能在用户登录时候
-
 
 2018-8-17-1.png
 
