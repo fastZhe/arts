@@ -17,20 +17,20 @@ print('''
 #  必须是Mac系统，否则本脚本无效
 if platform.system() != 'Darwin':
     print('必须是MAC OS X系统.')
-    sys.exit();
+    sys.exit()
 
 if os.geteuid() != 0:
     print('必须用root权限执行脚本.')
-    sys.exit();
+    sys.exit()
 #  如果在root权限，os.environ['SUDO_USER']返回用户名，如lining
 if os.environ.has_key('SUDO_USER'):
     USERNAME = os.environ['SUDO_USER']
     if USERNAME == 'root':
        print('请通过sudo命令切换到root权限')
-       sys.exit();
+       sys.exit()
 else:
     print('请通过sudo命令切换到root权限')
-    sys.exit();
+    sys.exit()
 #  下面两个目录是要搜索包含teamviewer字样的文件
 HOMEDIRLIB = '/Users/' + USERNAME  + '/library/preferences/'
 GLOBALLIB  =  '/library/preferences/'
@@ -65,7 +65,7 @@ else:
             os.remove(file)    #  删除文件
         except:
             print("不能删除文件，是否权限不够?")
-            sys.exit();
+            sys.exit()
     print("搞定!")
 
 # 下面的文件会替换里面的值
@@ -81,7 +81,7 @@ for file in TMBINARYES:
     else:
         print("File not found: " + file)
         print ("Install TeamViewer correctly")
-        sys.exit();
+        sys.exit()
 
 #  开始替换上述文件中的值
 def idpatch(fpath,platf,serial):
@@ -109,7 +109,7 @@ for file in TMBINARYES:
             idpatch(file,RANDOMPLATFORM,RANDOMSERIAL)
         except:
             print "错误：不能修改： " + file
-            sys.exit();
+            sys.exit()
 
 print "PlatformDevice: " + RANDOMPLATFORM
 print "PlatformSerial: " + RANDOMSERIAL
